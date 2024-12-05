@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
     db.query('INSERT INTO todos (task) VALUES (?)', [task.trim()], (err, results) => {
         if (err) return res.status(500).send('Internal Server Error');
         const newTodo = { id: results.insertId, task: task.trim(), completed: false };
-        res.status(201).json(newTodo);
+        res.status(201).json(newTodo);  
     });
 });
 
